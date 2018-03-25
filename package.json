@@ -1,5 +1,7 @@
 {
   "name": "budgRails",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^5.8.0"
+  }
 }
