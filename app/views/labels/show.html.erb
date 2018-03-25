@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @label.text_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @label.category_id %>
+</p>
+
+<p>
+  <strong>Labelled at:</strong>
+  <%= @label.labelled_at %>
+</p>
+
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>
