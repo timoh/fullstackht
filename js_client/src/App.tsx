@@ -6,8 +6,7 @@ import transactionsService from './services/transactions';
 const logo = require('./logo.svg');
 
 interface AppProps { /* declare your component's props here */ }
-// tslint:disable-next-line: no-any
-interface AppState { transactions: any; }
+interface AppState { transactions: Array<TransactionRow>; }
 interface TransactionRow { 
   id: string; 
   date: string;
@@ -19,13 +18,14 @@ interface TransactionRow {
   digest: string; 
   created_at: string; 
   updated_at: string; 
-  url: string; }
+  url: string; 
+}
 
 class App extends React.Component<AppProps, AppState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      transactions: []
+      transactions: new Array<TransactionRow>()
     };
   }
 
@@ -56,13 +56,9 @@ class App extends React.Component<AppProps, AppState> {
 
         });
         // tslint:disable-next-line: no-console
-        console.log('First:', responses[0]);
+        // console.log('First:', responses[0]);
         this.setState({ transactions: responses });
       });
-      // .then(() => {
-      //   // tslint:disable-next-line: no-console
-      //   console.log('TXXXS:', this.state.transactions);
-      // });
   }
   render() {
     return (
